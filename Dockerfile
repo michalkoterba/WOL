@@ -1,7 +1,8 @@
-FROM python:3.9-slim
+FROM python
 
 # Aktualizuję menadżer repo
 RUN apt update
+RUN apt install -y iputils-ping
 
 # Tworzę i przechodzę do katalogu app
 RUN mkdir /app

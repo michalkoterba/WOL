@@ -3,6 +3,7 @@ FROM python
 # Aktualizuję menadżer repo
 RUN apt update
 RUN apt install -y iputils-ping
+RUN apt install -y wakeonlan
 
 # Tworzę i przechodzę do katalogu app
 RUN mkdir /app

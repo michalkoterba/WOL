@@ -1,9 +1,9 @@
-FROM python
+FROM python:alpine
 
 # Aktualizuję menadżer repo
-RUN apt update
-RUN apt install -y iputils-ping
-RUN apt install -y wakeonlan
+RUN apk update
+RUN apk upgrade
+RUN apt add iputils
 
 # Tworzę i przechodzę do katalogu app
 RUN mkdir /app

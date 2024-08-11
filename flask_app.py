@@ -43,8 +43,11 @@ def home():
 @app.route("/start/<mac_address>")
 def start_wake_on_lan(mac_address):
     # Execute the Wake-on-LAN command
-    subprocess.run(["wakeonlan", "-i", "192.168.0.255", mac_address])
-    return "Magic packet sent!"
+    try:
+        subprocess.run(["wakeonlan", "-i", "192.168.0.255", mac_address])
+        return "Magic packet sent!"
+    except:
+        return "ping subpr"
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=80, debug=False)
+    app.run(host="0.0.0.0", port=8081, debug=False)

@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 def ping(host):
     param = '-n' if platform.system().lower() == 'windows' else '-c'
-    command = ['ping', param, '1', host]
+    command = ['ping', param, '1', '-w', '1', host]
     return subprocess.call(command) == 0
 
 def read_hosts_from_file(filename):

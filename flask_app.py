@@ -44,7 +44,7 @@ def home():
 def start_wake_on_lan(mac_address):
     # Execute the Wake-on-LAN command
     try:
-        subprocess.run(["wakeonlan", "-i", "192.168.0.255", mac_address])
+        subprocess.run(["awake", "-d", "192.168.0.255", mac_address])
         return "Magic packet sent!"
     except:
         return "Magic packet send error!!!"

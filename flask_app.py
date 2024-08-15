@@ -47,7 +47,7 @@ def start_wake_on_lan(mac_address):
         subprocess.run(["wakeonlan", "-i", "192.168.0.255", mac_address])
         return "Magic packet sent!"
     except:
-        return "ping subpr"
+        return "Magic packet send error!!!"
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8081, debug=False)

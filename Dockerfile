@@ -4,6 +4,7 @@ FROM python:alpine
 RUN apk update
 RUN apk upgrade
 RUN apk add iputils
+RUN apk add wol
 
 # Tworzę i przechodzę do katalogu app
 RUN mkdir /app

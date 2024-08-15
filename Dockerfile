@@ -3,7 +3,7 @@ FROM python:alpine
 # Aktualizuję menadżer repo
 RUN apk update
 RUN apk upgrade
-RUN apt add iputils
+RUN apk add iputils
 
 # Tworzę i przechodzę do katalogu app
 RUN mkdir /app

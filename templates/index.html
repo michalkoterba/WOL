@@ -38,7 +38,7 @@
                     <h4 class="card-title">{{ host.name }}</h4>
                     <p>Komputer jest wylaczony. Ostatnie sprawdzenie: 12 minut temu.</p>
                     {% if host.mac %}
-                    <button class="btn btn-primary mb-1" type="button">Uruchom</button>
+                    <a href="{{ url_for('start_wake_on_lan', mac_address=host.mac) }}" class="btn btn-primary mb-1">Uruchom</a>
                     {% else %}
                     <button class="btn btn-primary mb-1 " type="button" disabled>Uruchom</button>
                     {% endif %}

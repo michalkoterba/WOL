@@ -5,18 +5,11 @@ services:
     image: wol
     container_name: wol
     network_mode: host
-    networks:
-      - cloudflare_network
 
   tunnel:
     image: erisamoe/cloudflared
     container_name: cloudflared
     restart: unless-stopped
     command: tunnel run
-    networks:
-      - cloudflare_network
     environment:
       - TUNNEL_TOKEN=${TUNNEL_TOKEN}
-
-networks:
-  cloudflare_network:

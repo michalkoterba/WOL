@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+  wol:
+    build: .
+    image: wol
+    container_name: wol
+    network_mode: host
